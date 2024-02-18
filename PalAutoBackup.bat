@@ -28,7 +28,7 @@ if not exist "%BACKUPDIR%\" (
 )
 
 :: 開始進行備份
-echo [%TIMESTAMP%] Start Backup >> "%BACKUPDIR%\%BACKUP_LOG%"
+echo [%TIMESTAMP%] Start backup >> "%BACKUPDIR%\%BACKUP_LOG%"
 mkdir "%BACKUPDIR%\%TEMPFOLDER%"
 xcopy "%WORKDIR%" "%BACKUPDIR%\%TEMPFOLDER%" /E /Y >> "%BACKUPDIR%\%BACKUP_LOG%"
 powershell -Command "(Get-Item '%BACKUPDIR%\%TEMPFOLDER%').LastWriteTime = Get-Date('%TIMESTAMP%')"
@@ -38,7 +38,7 @@ FORFILES /P "%BACKUPDIR%\%TEMPFOLDER%" /C "cmd /c if @isdir == TRUE echo @path"
 if %errorlevel% NEQ 0 (
     echo [%TIMESTAMP%] No files or directories found >> "%BACKUPDIR%\%BACKUP_LOG%"
 ) else (
-    echo [%TIMESTAMP%] Backup Success >> "%BACKUPDIR%\%BACKUP_LOG%"
+    echo [%TIMESTAMP%] Backup success >> "%BACKUPDIR%\%BACKUP_LOG%"
 )
 
 :: 移除舊備份
