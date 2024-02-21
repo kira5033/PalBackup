@@ -4,7 +4,7 @@ setlocal enabledelayedexpansion
 :: 設定存檔路徑
 set WORKDIR="D:\Steam\steamapps\common\PalServer\Pal\Saved\SaveGames\0"
 :: 設定備份路徑
-set BACKUPDIR="D:\Steam\steamapps\common\PalServer\Backup Folder"
+set BACKUPDIR="D:\Steam\steamapps\common\PalServer\Backup"
 :: 設定Log名稱
 set BACKUP_LOG=00_backup_log.txt
 :: 存檔保留天數
